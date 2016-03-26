@@ -17,16 +17,19 @@
 	
 	<c:out value="${campgroundChosenName}"/>
 	<br>
+	<c:out value="${campgroundId}"/>
+	<br>
 	
 	<h1>Campsite Search Form</h1>
-		<c:url  var="formAction" value="/searchDate"/>
+		<c:url  var="formAction" value="/searchForSites"/>
 		<form method="GET" action="${formAction}">
-			<label for="startDate">Start Date: </label>
-			<input type="text" id="startDate" name="startDate"/><br>
+			<label for="startDateChosen">Start Date: </label>
+			<input type="text" id="startDateChosen" name="startDateChosen" placeholder="yyyy-mm-dd"/><br>
 			
-			<label for="endDate">To Date: </label>
-			<input type="text" id="endDate" name="endDate"/><br>
-			
+			<label for="endDateChosen">End Date: </label>
+			<input type="text" id="endDateChosen" name="endDateChosen" placeholder="yyyy-mm-dd"/><br>
+			<input type="hidden" name="campgroundId" value="${campgroundId}"/>
+			<input type="hidden" name="campgroundChosenName" value="${campgroundChosenName}"/>
 			<input type="submit" value="Search"/>
 		</form>
 	

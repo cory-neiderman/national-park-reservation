@@ -1,5 +1,7 @@
 package com.techelevator.campsitereservation.model;
 
+import java.util.List;
+
 public class Campsite {
 	
 	private int siteId;
@@ -7,8 +9,10 @@ public class Campsite {
 	private int siteNumber;
 	private int maxOccupancy;
 	private boolean isHandicapAccessible;
-	private int maxReserveLength;
+	private int maxRVLength;
 	private boolean hasUtilities;
+	private ReservationList reservations;
+	
 	
 	
 	public int getSiteId() {
@@ -35,24 +39,36 @@ public class Campsite {
 	public void setMaxOccupancy(int maxOccupancy) {
 		this.maxOccupancy = maxOccupancy;
 	}
-	public boolean isHandicapAccessible() {
+	public boolean getIsHandicapAccessible() {
 		return isHandicapAccessible;
 	}
-	public void setHandicapAccessible(boolean isHandicapAccessible) {
+	public void setIsHandicapAccessible(boolean isHandicapAccessible) {
 		this.isHandicapAccessible = isHandicapAccessible;
 	}
-	public int getMaxReserveLength() {
-		return maxReserveLength;
+	
+	public int getMaxRVLength() {
+		return maxRVLength;
 	}
-	public void setMaxReserveLength(int maxReserveLength) {
-		this.maxReserveLength = maxReserveLength;
+	public void setMaxRVLength(int maxRVLength) {
+		this.maxRVLength = maxRVLength;
 	}
-	public boolean isHasUtilities() {
+	public boolean getHasUtilities() {
 		return hasUtilities;
 	}
 	public void setHasUtilities(boolean hasUtilities) {
 		this.hasUtilities = hasUtilities;
 	}
+	public ReservationList getReservations() {
+		return reservations;
+	}
+	public void setReservations(ReservationList reservations) {
+		this.reservations = reservations;
+	}
+	
+	
+}
+	
+	
 	
 
-}
+

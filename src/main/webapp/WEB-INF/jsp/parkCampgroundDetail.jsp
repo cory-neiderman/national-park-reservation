@@ -27,7 +27,15 @@
 				<p>Daily Fee: $<c:out value="${campground.dailyFee}"/></p>
 				<p>Number of campsites:<c:out value="${campground.totalNumberOfSites}"/>
 				<p><c:out value="${campground.campgroundId}"/>
-				
+				<c:choose>
+					<c:when test="${campground.hasClosedMonths}">
+						<p>Campground is only from <c:out value="${campground.openFromAsString}"/> to <c:out value="${campground.openToAsString}"/></p>
+					</c:when>
+					
+					<c:otherwise>
+						<p>Campground is open all year round</p>
+					</c:otherwise>
+				</c:choose>
 				<c:url var="campgroundHref" value="/campsiteSearch">
 				<c:param name="campgroundId" value="${campground.campgroundId}"/>
 				<c:param name="campgroundChosenName" value="${campground.campgroundName}"/>
