@@ -11,30 +11,30 @@
 	</head>
 	
 	<body>
-	<header>Search</header>
-	
-	
-	
-	<c:out value="${campgroundChosenName}"/>
-	<br>
-	<c:out value="${campgroundId}"/>
-	<br>
+		<c:url var="logoSrc" value="/img/logo.png" />
+		<img id="logo" src="${logoSrc}" alt="National Park Geek Logo" />
+				
+	<header class="searchform"><c:out value="${campgroundChosenName}"/></header>
 	
 	<h1>Campsite Search Form</h1>
+	
 		<c:url  var="formAction" value="/searchForSites"/>
 		<form method="GET" action="${formAction}">
+			<div3>
 			<label for="startDateChosen">Start Date: </label>
 			<input type="text" id="startDateChosen" name="startDateChosen" placeholder="yyyy-mm-dd"/><br>
-			
+			<br>
 			<label for="endDateChosen">End Date: </label>
 			<input type="text" id="endDateChosen" name="endDateChosen" placeholder="yyyy-mm-dd"/><br>
+			</div3>
 			<br>
-			Additional Features:<br>
+			<h4>Additional Features: </h4>
+			<div3>
 			<label for="handicap">Handicap Accessibility:</label>
-			yes<input type="radio" id="handicapAccessible" name="handicapAccessible" value="1"/>
-			no<input type="radio" id="handicapAccessible" name="handicapAccessible" value="-1"/>
-			does not matter<input type="radio" id="handicapAccessible" name="handicapAccessible" value="0"/>
-			
+			Yes <input type="radio" id="handicapAccessible" name="handicapAccessible" value="1"/>
+			No <input type="radio" id="handicapAccessible" name="handicapAccessible" value="-1"/>
+			N/A <input type="radio" id="handicapAccessible" name="handicapAccessible" value="0"/>
+			</div3>
 			<input type="hidden" name="campgroundId" value="${campgroundId}"/>
 			<input type="hidden" name="campgroundChosenName" value="${campgroundChosenName}"/>
 			<input type="submit" value="Search"/>

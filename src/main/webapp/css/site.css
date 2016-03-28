@@ -1,0 +1,84 @@
+html {
+	background-color: #f5f0dd;
+	font-family: "Helvetica";
+}
+
+#logo {
+	width: 600px;
+}
+
+.parklist {
+	color: #4d3300;
+}
+
+.park {
+	color: #4d3300;
+}
+.title {
+	color: #664400;
+	font-size: 30px;
+}
+
+h1 {
+	color: #664400;
+}
+h3 {
+	color:#33cc33;
+	font-size: 20px;
+}
+
+.campgrounds{
+	color: #664400;
+	
+}
+
+.searchform {
+	font-size: 40px;
+	font-style: "Times New Roman";
+	color: #664400;
+}
+
+div3 {
+	color:#33cc33;
+}
+
+h4 {
+	color: #664400;
+}
+
+p1 {
+	color: #664400;
+	font-size: 30px;
+	
+}
+
+div4 {
+	color: #664400;
+	font-size: 20px;
+	
+}
+
+header1 {
+	text-align: center ;
+	color: #664400;
+	font-size: 25px;
+	font-style: "Times New Roman";
+}
+
+h11 {
+	text-align: center;
+	color: #33cc33;
+	font-style: "Times New Roman";
+	
+}
+
+div10{
+	color: #664400;
+	font-size: 30px;
+	
+}
+
+.display {
+	 display: inline;
+	 float: left;
+}

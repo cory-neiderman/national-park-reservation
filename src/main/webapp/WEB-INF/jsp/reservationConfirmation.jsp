@@ -11,16 +11,26 @@
 	</head>
 	
 	<body>
-	<header>Reservation Confirmation</header>
 	
-	<p>Thank you <c:out value="${reservation.name}"/> for the reservation.
-	You are booked at campsite number (need to add campiteNumber still)<c:out value="${reservation.campsiteNumber}"/> at the <c:out value="${reservation.campgroundName}"/> campground
-	from <c:out value="${reservation.fromDateAsString}"/> to <c:out value="${reservation.toDateAsString}"/>. 
-	Your Reservation number is <c:out value="${reservation.reservationId}"/>.</p>
+		<c:url var="logoSrc" value="/img/logo.png" />
+		<img id="logo" src="${logoSrc}" alt="National Park Geek Logo" /><br>
+		
+		
+	<h11>
+	<p>Thank you <c:out value="${reservation.name}"/>!<br>
+	<br>
+	You have booked campsite number <c:out value="${reservation.campsiteNumber}"/> at the <c:out value="${reservation.campgroundName}"/> campground !
+	<br>
+	<br>From :   <c:out value="${reservation.fromDateAsString}"/> 
+	<br>
+	<br>To :   <c:out value="${reservation.toDateAsString}"/> 
+	<br>
+	<br>
+	Confirmation Number : <c:out value="${reservation.reservationId}"/></p>
 	
 	<c:url value="/" var="mainPageHref"/>
 	<p><a href="${mainPageHref}">Return to home page</a>
-	
+	</h11>
 	
 	
 </body>

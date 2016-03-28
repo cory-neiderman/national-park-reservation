@@ -9,10 +9,12 @@
 		<c:url var="cssHref" value="/css/site.css" />
 		<link type="text/css" rel="stylesheet" href="${cssHref}"/>
 	</head>
-	
+
 	<body>
-	<header>Main Page</header>
-	<h1>Park List</h1>
+				<c:url var="logoSrc" value="/img/logo.png" />
+				<img id="logo" src="${logoSrc}" alt="National Park Geek Logo" />
+				
+	<h1 class="parklist">Park List</h1>
 	
 	
 	

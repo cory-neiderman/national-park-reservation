@@ -11,32 +11,32 @@
 	</head>
 	
 	<body>
-	<header>Search Results</header>
-	
-	<c:out value="${campgroundId}"/>
-	<p>These campsites are available at <c:out value="${campgroundChosenName}"/>.  Click to reserve a campsite<p>
+		<c:url var="logoSrc" value="/img/logo.png" />
+		<img id="logo" src="${logoSrc}" alt="National Park Geek Logo" /><br>
+				
+	<p1>Available Campsites At <c:out value="${campgroundChosenName}"/> : </p1>
 	<ul>
 		<c:forEach var="campsite" items="${listOfSites}">
-		<li>Campsite Id: <c:out value="${campsite.siteId}"/></li>
-		<li>Campsite Number(in the Campground): <c:out value="${campsite.siteNumber}"/></li>
-		<li>Max Occupancy: <c:out value="${campsite.maxOccupancy}"/> people</li>
-		<li>Maximum RV Length: <c:out value="${campsite.maxRVLength}"/>ft.</li>
+		<li>Location Id : <c:out value="${campsite.siteId}"/></li><br>
+		<li>Location Number (in the Campground) : <c:out value="${campsite.siteNumber}"/></li><br>
+		<li>Location Max Occupancy : <c:out value="${campsite.maxOccupancy}"/> people</li><br>
+		<li>Location Maximum RV Length : <c:out value="${campsite.maxRVLength}"/>ft.</li><br>
 		<li><c:choose>
 				<c:when test="${campsite.isHandicapAccessible}">
-					Handicap Accessible
+					This Location is Handicap Accessible
 				</c:when>
 				<c:otherwise>
-					NOT Handicap Accessible
+					Location is not handicap accessible.
 				</c:otherwise>
-			</c:choose></li>
+			</c:choose></li><br>
 		<li><c:choose>
 				<c:when test="${campsite.hasUtilities}">
-					Utilities Available
+					Utilities Available.
 				</c:when>
 				<c:otherwise>
-					NO Utilities
+					Utilities are not available.
 				</c:otherwise>
-			</c:choose></li>
+			</c:choose></li><br>
 		<c:url var="reserveHref" value="/reserveForm">
 			
 		</c:url>

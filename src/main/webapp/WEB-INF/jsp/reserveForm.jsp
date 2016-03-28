@@ -11,10 +11,12 @@
 	</head>
 	
 	<body>
-	<header>Reserve Form</header>
-	
-	<c:out value="${campsiteId}"/>
-	<p>Reservation for campsite number <c:out value="${campsiteNumber}"/> at the <c:out value="${campgroundChosenName}"/> campgrounds</p>
+		<c:url var="logoSrc" value="/img/logo.png" />
+		<img id="logo" src="${logoSrc}" alt="National Park Geek Logo" />
+		<div4>		
+	<p>Please Confirm Reservation for Campsite <c:out value="${campsiteNumber}"/> at <c:out value="${campgroundChosenName}"/> Campgrounds.</p>
+	<br>
+	<br>
 	<c:url value="/reservationSubmit" var="formAction">
 		<c:param name="campsiteId" value="${campsiteId}"/>
 		<c:param name="campsiteNumber" value="${campsiteNumber}"/>
@@ -26,10 +28,11 @@
 	
 		<label for="reservationName">Enter the name for the reservation:</label> 
 		<input type="text" name="reservationName" id="reservationName" /><br>
+		<br>
 		<input type="submit" value="Submit Reservation"/>
 	</form>
 	
-	
+	</div4>
 	
 	</body>
 </html>
