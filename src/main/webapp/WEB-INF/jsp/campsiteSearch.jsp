@@ -28,6 +28,13 @@
 			
 			<label for="endDateChosen">End Date: </label>
 			<input type="text" id="endDateChosen" name="endDateChosen" placeholder="yyyy-mm-dd"/><br>
+			<br>
+			Additional Features:<br>
+			<label for="handicap">Handicap Accessibility:</label>
+			yes<input type="radio" id="handicapAccessible" name="handicapAccessible" value="1"/>
+			no<input type="radio" id="handicapAccessible" name="handicapAccessible" value="-1"/>
+			does not matter<input type="radio" id="handicapAccessible" name="handicapAccessible" value="0"/>
+			
 			<input type="hidden" name="campgroundId" value="${campgroundId}"/>
 			<input type="hidden" name="campgroundChosenName" value="${campgroundChosenName}"/>
 			<input type="submit" value="Search"/>

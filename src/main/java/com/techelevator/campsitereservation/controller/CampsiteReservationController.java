@@ -53,6 +53,7 @@ public class CampsiteReservationController {
 			reservation.setToDate(LocalDate.parse(endDateChosen));
 			reservation.setCreateDate(LocalDate.now());
 			reservation.setSiteId(campsiteId);
+			reservation.setCampgroundName(campgroundChosenName);
 			
 			model.put("reservation", reservation);
 			
@@ -60,27 +61,30 @@ public class CampsiteReservationController {
 	}
 	
 	@RequestMapping(path="/reservationSubmit", method=RequestMethod.POST)
-	public String displayReservationConfirmation(Map<String, Object> model,
-											@RequestParam(name="reservationName") String reservationName,
-											@RequestParam(name="startDateChosen") String startDateChosen,
-											@RequestParam(name="endDateChosen") String endDateChosen,
-											
-											@RequestParam(name="campsiteId") String campsiteId,
-											@RequestParam(name="campsiteNumber") String campsiteNumber,
-											@RequestParam(name="campgroundChosenName") String campgroundChosenName){
+	public String processReservationConfirmation(Map<String, Object> model,
+													@RequestParam(name="reservationName") String reservationName){
 			 
 			model.put("reservationName", reservationName);
-			model.put("startDateChosen", startDateChosen);
-			model.put("endDateChosen", endDateChosen);
-			model.put("campsiteId", campsiteId);
-			model.put("campsiteNumber", campsiteNumber);
-			model.put("campgroundChosenName", campgroundChosenName);
 			
 			Reservation reservation = (Reservation)model.get("reservation");
 			reservation.setName(reservationName);
 			
 			reservationDAO.save(reservation);
 		
-			return "reservationConfirmation";
+			return "redirect:/reservationConfirmation";
+	}
+	@RequestMapping(path="/reservationConfirmation", method=RequestMethod.GET)
+	public String displayReservationConfirmation(){
+		return "reservationConfirmation";
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

@@ -59,10 +59,10 @@ public class JDBCCampsiteDAO implements CampsiteDAO{
 			
 			while(resultsReservation.next()){
 				Reservation reservation = new Reservation();
-				reservation.setReservationId(resultsReservation.getInt("reservation_id"));
+				reservation.setReservationId(resultsReservation.getLong("reservation_id"));
 				reservation.setSiteId(siteId);
 				reservation.setName(resultsReservation.getString("name"));
-				reservation.setReservationId(resultsReservation.getInt("reservation_id"));
+				reservation.setReservationId(resultsReservation.getLong("reservation_id"));
 				reservation.setFromDate(LocalDate.parse(resultsReservation.getString("from_date")));
 				reservation.setToDate(LocalDate.parse(resultsReservation.getString("to_date")));
 				reservations.addReservation(reservation);

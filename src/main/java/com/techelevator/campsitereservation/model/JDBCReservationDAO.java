@@ -20,15 +20,16 @@ public class JDBCReservationDAO implements ReservationDAO{
 	@Override
 	public void save(Reservation reservation) {
 		
-		/*SqlRowSet results = jdbcTemplate.queryForRowSet("SELECT nextval('reservation_reservation_id_seq')");
+		SqlRowSet results = jdbcTemplate.queryForRowSet("SELECT nextval('reservation_reservation_id_seq')");
 		results.next();
-		Long reservationId = results.getLong(1);*/
+		Long reservationId = results.getLong(1);
+		reservation.setReservationId(reservationId);
 		
-		String sqlInsertReservation = "INSERT INTO reservation(site_id, name, from_date, to_date, create_date) "+
-				"VALUES(?,?,?,?,?)";
+		String sqlInsertReservation = "INSERT INTO reservation(reservation_id, site_id, name, from_date, to_date, create_date) "+
+				"VALUES(?,?,?,?,?,?)";
 		
-		jdbcTemplate.update(sqlInsertReservation, reservation.getSiteId(), reservation.getName(), reservation.getFromDate(), reservation.getToDate(), reservation.getCreateDate() );
-
+		jdbcTemplate.update(sqlInsertReservation, reservationId, reservation.getSiteId(), reservation.getName(), reservation.getFromDate(), reservation.getToDate(), reservation.getCreateDate() );
+		
 		
 	}
 
